@@ -28,10 +28,12 @@ List<BreakFastItems> breakFastItems = [
       foodImage: Pictures.breadRostImage,
       calorieText: '80 cal',
       foodName: 'Bread Roast',
-      foodCaption: 'Embracing the simple joy of a warm and toasty Bread Roast.'),
+      foodCaption:
+          'Embracing the simple joy of a warm and toasty Bread Roast.'),
   BreakFastItems(
       foodImage: Pictures.saladImage,
       calorieText: '50 cal',
       foodName: 'Salad',
-      foodCaption: 'Crisp, colorful, and oh-so-fresh – indulging in the vibrant goodness of a delicious salad!'),
+      foodCaption:
+          'Crisp, colorful, and oh-so-fresh – indulging in the vibrant goodness of a delicious salad!'),
 ];

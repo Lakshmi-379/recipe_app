@@ -12,16 +12,17 @@ class _BuildSearchState extends State<BuildSearch> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        color: Colors.white.withOpacity(0.2)
-      ),
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.white.withOpacity(0.2)),
       child: TextField(
         decoration: InputDecoration(
-          hintText: "Find Your Favorite Recipe",
-          hintStyle: TextStyle(color: Colors.white),
-          prefixIcon: Icon(Icons.search,color: Colors.white,),
-          border: InputBorder.none
-        ),
+            hintText: "Find Your Favorite Recipe",
+            hintStyle: TextStyle(color: Colors.white),
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            border: InputBorder.none),
       ),
     );
   }

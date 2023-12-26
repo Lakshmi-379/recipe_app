@@ -18,10 +18,16 @@ class _BreakFastPageState extends State<BreakFastPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Text(
                 'Beark Fast',
-                style: TextStyle(color: AppColors.greenColor, fontWeight: FontWeight.bold,fontSize: 20,),
+                style: TextStyle(
+                  color: AppColors.greenColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
                 textAlign: TextAlign.start,
               ),
               SizedBox(

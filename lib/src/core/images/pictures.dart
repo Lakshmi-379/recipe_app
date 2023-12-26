@@ -1,5 +1,5 @@
 class Pictures {
-  static const String profile = "https://wallpapers.com/images/hd/aesthetic-profile-picture-52t290ggbex44jma.jpg";
+  static const String profile = "https://thumbs.dreamstime.com/b/basic-rgb-266259555.jpg";
   static const String saladImage = "https://img.lovepik.com/photo/48014/8321.jpg_wh860.jpg";
   static const String breakFastImage = "https://www.shutterstock.com/image-photo/female-hands-fork-knife-eating-600nw-2221490119.jpg";
   static const String snacksImage = "https://hips.hearstapps.com/hmg-prod/images/christmas-snacks-christmas-chex-mix-1634674370.jpeg?crop=0.998849252013809xw:1xh;center,top&resize=980:*";

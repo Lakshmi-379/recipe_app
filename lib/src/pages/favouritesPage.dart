@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/src/core/colors/colors.dart';
 
-import '../core/colors/colors.dart';
+class FavoritePage extends StatelessWidget {
+  const FavoritePage({
+    Key? key,
+  }) : super(key: key);
 
-class FavoritesPage extends StatefulWidget {
-  const FavoritesPage({super.key});
-
-  @override
-  State<FavoritesPage> createState() => _FavoritesPageState();
-}
-
-class _FavoritesPageState extends State<FavoritesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.theme,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Text('My Favorites')
-            ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Favorites',
+            style: TextStyle(
+                color: AppColors.greenColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),
-
     );
   }
 }

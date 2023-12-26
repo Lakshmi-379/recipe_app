@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/src/core/colors/colors.dart';
 import 'package:recipe_app/src/pages/homePage.dart';
-
 import '../pages/favouritesPage.dart';
 import '../pages/profilePage.dart';
 
@@ -17,7 +16,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
 
   final List<Widget> _pages = [
     HomePage(),
-    FavoritesPage(),
+    FavoritePage(),
     ProfilePage(),
   ];
   @override
@@ -30,15 +29,17 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
         selectedItemColor: AppColors.greenColor,
         unselectedItemColor: Colors.white,
         currentIndex: _currentIndex,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
-        }, items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite),label: 'Fav' ),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'Profile')
-      ],
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Fav'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), label: 'Profile')
+        ],
       ),
     );
   }

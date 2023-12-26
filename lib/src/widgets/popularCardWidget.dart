@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/src/core/colors/colors.dart';
-import 'package:recipe_app/src/core/images/pictures.dart';
 import 'package:recipe_app/src/model/popularItemsModel.dart';
 import 'package:recipe_app/src/pages/recipePage.dart';
 
 class PopularCard extends StatefulWidget {
-  const PopularCard({super.key});
+  const PopularCard({
+    super.key,
+  });
 
   @override
   State<PopularCard> createState() => _PopularCardState();
 }
 
 class _PopularCardState extends State<PopularCard> {
+  List<bool> isFavoriteList =
+      List.generate(popularFood.length, (index) => false);
+  void _toggleFavorite(int index) {
+    setState(() {
+      isFavoriteList[index] = !isFavoriteList[index];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,16 +29,26 @@ class _PopularCardState extends State<PopularCard> {
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          itemCount: 4,
+          itemCount: popularFood.length,
           itemBuilder: ((context, index) {
             return Padding(
               padding: EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: (){
-                  PopularFoodItems popularFoodItems = PopularFoodItems(foodImage: popularFood[index].foodImage, calorieText: popularFood[index].foodCaption, foodName: popularFood[index].foodName, foodCaption: popularFood[index].foodCaption, duration: popularFood[index].duration, ingrediants: popularFood[index].ingrediants, description: popularFood[index].description);
+                onTap: () {
+                  PopularFoodItems popularFoodItems = PopularFoodItems(
+                      foodImage: popularFood[index].foodImage,
+                      calorieText: popularFood[index].calorieText,
+                      foodName: popularFood[index].foodName,
+                      foodCaption: popularFood[index].foodCaption,
+                      duration: popularFood[index].duration,
+                      ingrediants: popularFood[index].ingrediants,
+                      description: popularFood[index].description);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RecipePage(popularFoodItems: popularFoodItems,)),
+                    MaterialPageRoute(
+                        builder: (context) => RecipePage(
+                              popularFoodItems: popularFoodItems,
+                            )),
                   );
                 },
                 child: Container(
@@ -55,14 +74,27 @@ class _PopularCardState extends State<PopularCard> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Text(
                                     popularFood[index].calorieText,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(color: Colors.amber),
                                   ),
-                                  Icon(Icons.favorite_border,color: Colors.red),
+                                  IconButton(
+                                    onPressed: () {
+                                      _toggleFavorite(index);
+                                    },
+                                    icon: Icon(
+                                      isFavoriteList[index]
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: isFavoriteList[index]
+                                          ? Colors.red
+                                          : Colors.white,
+                                    ),
+                                  )
                                 ],
                               ),
                               SizedBox(
@@ -72,8 +104,8 @@ class _PopularCardState extends State<PopularCard> {
                                 popularFood[index].foodName,
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
                                   fontSize: 25,
                                 ),
                               ),

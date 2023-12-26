@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/src/pages/homePage.dart';
-import 'package:recipe_app/src/widgets/bottomNavigationPage.dart';
+import 'package:recipe_app/src/pages/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-
-      ),
-      home:  BottomNavigationPage(),
+      theme: ThemeData(),
+      home: SplashScreenPage(),
     );
   }
 }
-
